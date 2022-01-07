@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Signup Form</title>
+    <script>
+        function validate()
+        {
+            var fname = document.myForm.name.value;
+                  var email = document.myForm.email.value;
+                  var pass = document.myForm.password.value;
+                  var repass = document.myForm.repass.value;
+                  var phno = document.myForm.phone.value;
+                  
+                  if(fname.length<=0)
+                  {
+                      document.getElementById("sfname").innerHTML=" Please fill out this field";
+                  }
+
+                  var atposition=email.indexOf("@");  
+                  var dotposition=email.lastIndexOf(".");  
+                  if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length)
+                    {
+                        document.getElementById("semail").innerHTML=" Please Include an @ in email address";
+                    }
+
+                  if(pass.length<6)
+                  {
+                    document.getElementById("spass").innerHTML=" Password too short";
+                  }  
+
+                  if(repass!=pass)
+                  {
+                      document.getElementById("srepass").innerHTML=" Passwords do not match";
+                  }
+
+                  if(isNaN(phno) || phno.length!=10)
+                  {
+                    document.getElementById("sphno").innerHTML=" Invalid Phone Number";
+                  }
+
+                  return false;
+              
+        }
+    </script>
+    <style>
+        .class {
+            width: 400px;
+            border: solid 2px #e6e6e6;
+            padding-left: 160px;
+            margin-left: 900px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+
+        button {
+            font-family: cursive;
+        }
+
+        .pos {
+            position: relative;
+            top: 10px;
+            left: 53%;
+            margin-left: -220px;
+        }
+
+        #mark {
+            color: yellow;
+            font-family: cursive;
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .login-button {
+            text-align: center;
+            width: 20%;
+            margin-left: 50px;
+            padding: 0.5rem;
+            border: 1px solid #000;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<div style="background-image: url('trial4.jpeg'); background-repeat: no-repeat; background-size: cover;">
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="pos"><img src="Capture.png" width="400"></div><br><br>
+        <marquee id="mark">Serving Maharashtra, Tamil Nadu and Karnataka</marquee><br><br>
+    <div class="container">
+        <div class="row">
+        </div>
+        <div class="class">
+            <h3 style="font-family: cursive"></h3>
+            <form action="/sign_up" method="post" autocomplete="off" name="myForm" id="myForm">
+                <h1>Login</h1>
+                <input class="box" type="text" name="name" id="name" placeholder="Name" required autocomplete="off" /><span id="sfname" style="color:red"></span><br>
+                <input class="box" type="email" name="email" id="email" placeholder="E-Mail " required autocomplete="off" /><span id="semail" style="color:red"></span><br>
+                <input class="box" type="password" name="password" id="password" placeholder="Password " required autocomplete="off" /><span id="spass" style="color:red"></span><br>
+                <input type="password" placeholder="Re-enter Password" name = "repass"><span id="srepass" style="color:red"></span><br><br>
+                <input class="box" type="text" name="phone" id="phone" placeholder="Phone Number " required autocomplete="off" /><span id="sphno" style="color:red"></span><br>
+                <br>
+                <textarea>Address</textarea><br><br>
+                Date of birth: <input type="date" name = "dob" id="dob" max="2003-11-23"><br><br>
+                Gender:
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label><br><br>
+                Preference:
+                <input type="checkbox" id="veg" name="veg" value="veg">
+                <label for="veg">Veg</label>
+                <input type="checkbox" id="nonveg" name="nonveg" value="nonveg">
+                <label for="nonveg">Non-Veg</label>
+                <input type="checkbox" id="jain" name="jain" value="jain">
+                <label for="jain">Jain</label><br><br>
+                <label>City:</label>
+                <select>
+                    <optgroup label="Maharashtra">
+                        <option>Mumbai</option>
+                        <option>Nashik</option>
+                        <option>Pune</option>
+                        <option>Nagpur</option>
+                        <option>Aurangabad</option>
+                    <optgroup label="Karnataka">
+                        <option>Banglore</option>
+                        <option>Mangalore</option>
+                        <option>Shivamogga</option>
+                        <option>Gulbarga</option>
+                        <option>Hubli</option>
+                    <optgroup label="Tamil Nadu">
+                        <option>Chennai</option>
+                        <option>Vellore</option>
+                        <option>Coimbatore</option>
+                        <option>Madurai</option>
+                        <option>Tiruchirappalli</option>
+                </select><br><br>
+                <input type="submit" value="Submit" onsubmit="validate()">
+                </form>
+        </div>
+        <div class="">
+        </div>
+    </div>
+    </div>
+</body>
+</div>
+</html>

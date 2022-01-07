@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>Thank You Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular. min.js"></script>
+  <script>
+    var p_details = 
+    [ 
+      {ProductId: "D0006", ProductName: "Credit Card", stock: "1"}, 
+      {ProductId: "D0004", ProductName: "Cash", stock: "0"}, 
+      {ProductId: "P0002", ProductName: "Paytm", stock: "1"}
+    ]
+  </script>
+  <script>
+    function getD(){
+      var e = document.getElementById("p");
+      var text = e.options[e.selectedIndex].text;
+      var h = document.getElementById("here");
+      for(var i=0;i<3;i++)
+      {
+        if(text == p_details[i]["ProductName"])
+        {
+          if(p_details[i]["stock"]==1)
+          {
+            h.innerHTML="You can pay using this mode of payment";
+          }
+          else
+          {
+            h.innerHTML="Please select any other mode of payment";
+          }
+        }
+      }
+    }
+  </script>
+<style>
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  .bodyy {
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .pos{
+    position: relative;
+    top: 10px;
+    left: 53%;
+    margin-left:-220px;
+  }
+  body{	margin-top: 25px;
+  color:#8B0000;}
+
+</style>
+
+</head>
+
+<div style="background-image: url('trial4.jpeg'); background-repeat: no-repeat; background-size: cover;">
+<div class="pos"><img src="Capture.png" width="400"></div><br><br>
+<body>
+  <div class="bodyy">Thank you for ordering from Zomato.<br>
+  Your food is being prepared and will be delievered to you shortly.<br><br>
+
+  <h3>Please Select Mode Of Payment</h3>
+  <select id="p" size=1>
+  <option>--select--</option>
+  <option value="cash">Cash</option>
+  <option value="credit">Credit Card</option>
+  <option value="pay">Paytm</option>
+  </select>
+  <button onClick="getD()">Availability</button><br><br>
+  <p id="here">
+    Project by<br>
+  20BIT0357 Dhruv Umesh Sompura<br>
+  20BIT0403 Abhishek KB</div>
+  </p>
+  <img src="a2.gif" height="400" width="400" style="margin-left:550px"><br><br>
+</body></div>
+</html>
+

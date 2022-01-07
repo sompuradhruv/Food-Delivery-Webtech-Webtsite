@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "alert": "^5.0.10",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.1.0",
+    "mongose": "^0.0.2-security"
+  }
+}

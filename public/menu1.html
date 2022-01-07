@@ -1,0 +1,271 @@
+<html>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('todoCtrl', function($scope) {
+    $scope.todoList = [{todoText:'veg sheek kebab', done:false}];
+
+    $scope.todoAdd = function() {
+        $scope.todoList.push({todoText:$scope.todoInput, done:false});
+        $scope.todoInput = "";
+    };
+
+    $scope.remove = function() {
+        var oldList = $scope.todoList;
+        $scope.todoList = [];
+        angular.forEach(oldList, function(x) {
+            if (!x.done) $scope.todoList.push(x);
+        });
+    };
+});
+
+
+</script>
+<head>
+<title>North Indian 1</title>
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+<style>
+    
+a{
+	color:#fff;
+	text-decoration: none;
+}
+
+h1{
+	text-align: center;
+}
+
+.container{
+	width:540px;
+	margin:40px auto;
+	overflow:auto;
+}
+
+.slider-inner{
+	width:500px;
+	height:300px;
+	position:relative;
+	overflow:hidden;
+	float:left;
+	padding:3px;
+	border:#666 solid 1px;
+}
+
+.slider-inner img{
+	display:none;
+	width:500px;
+	height:300px;
+}
+
+.slider-inner img.active{
+	display:inline-block;
+}
+
+.prev,.next{
+	float:left;
+	margin-top:130px;
+	cursor: pointer;
+}
+
+.prev{
+	position:relative;
+	margin-right:-45px;
+	z-index:100;
+}
+
+.next{
+	position:relative;
+	margin-left:-45px;
+	z-index:100;
+}
+    .height {
+        height: 10px;
+    }
+           
+    
+           
+    .fa {
+        font-size: 32px;
+    }
+           
+    .fa:hover {
+        transform: rotate(360deg);
+        transition: 1s;
+        color: white;
+    }
+           
+    .footerdot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.5s ease;
+    }
+           
+    .active,
+    .footerdot:hover {
+        background-color: black;
+    }
+
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/quicksand/v24/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  .bodyy {
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .login-button {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #e6e6e6;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  a{
+    color:black;
+    text-decoration: none;
+  }
+  .pos{
+    position: relative;
+    top: 10px;
+    left: 53%;
+    margin-left:-620px;
+    border: 5px solid transparent #e6e6e6;
+    border-radius: 10px;
+    width:400px;
+  }
+  .pos2{
+    position: absolute;
+    top: 18px;
+    left: 53%;
+    margin-left:-100px;
+    border: 5px solid transparent #e6e6e6;
+    border-radius: 10px;
+    width:400px;
+  }
+  .slide{
+    position: relative;
+    top: 10px;
+    left: 53%;
+    margin-left:-250px;
+    border: 5px solid transparent #e6e6e6;
+    border-radius: 10px;
+    width:400px;
+  }
+</style>
+
+</head>
+
+<div style="background-image: url('wall3.jpeg'); background-repeat: no-repeat; background-size: cover;">
+
+<body ng-app="myApp" ng-controller="todoCtrl">
+
+
+    <div class="container">
+        <h1>JQSlider</h1>
+        <div class="slider-outer">
+          <img src="arrow-left.png" class="prev" alt="Prev">
+          <div class="slider-inner">
+            <img src="new22.png" class="active">
+            <img src="new3.png">
+            <img src="new.png">
+          </div>
+          <img src="arrow-right.png" class="next" alt="Next">
+        </div>
+      </div>
+
+    <script>
+          $(document).ready(function(){
+  $('.next').on('click', function(){
+    var currentImg = $('.active');
+    var nextImg = currentImg.next();
+
+    if(nextImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      nextImg.addClass('active').css('z-index', 10);
+    }
+  });
+
+  $('.prev').on('click', function(){
+    var currentImg = $('.active');
+    var prevImg = currentImg.prev();
+
+    if(prevImg.length){
+      currentImg.removeClass('active').css('z-index', -10);
+      prevImg.addClass('active').css('z-index', 10);
+    }
+  });
+});
+    </script>
+
+  <div align="center" class="bodyy">
+
+    <h1>Menu</h1>
+    <a href="#section1">Appetizer</a> |
+    <a href="#section2">First Course</a> |
+    <a href="#section3">Main Course</a> |
+    <a href="#section4">Dessert</a><br><br>
+
+    <h4><div id="section1">Appetizer</div></h4>
+    <p>
+    <label>Veg Sheek Kebab- 100 Rs.</label></p>
+    <p>
+    <label>Classic Paneer Tikka- 200 Rs.</label></p><br>
+
+    <h4><div id="section2">First Course</div></h4>
+    <p>
+    <label>Veg Amritsari- 200 Rs.</label></p>
+    <p>
+    <label>Paneer Makhani- 250 Rs.</label></p><br>
+
+    <h4><div id="section3">Main Course</div></h4>
+    <p>
+    <label>Jeera Rice- 250 Rs.</label></p>
+    <p>
+    <label>Classic Paneer Tikka- 300 Rs.</label></p><br>
+
+    <h4> <div id="section4">Dessert</div></h4>
+    <p>
+    <label>Jalebi With Rabdi- 150 Rs.</label></p>
+    <p>
+    <label>Gulab Jamun- 100 Rs.</label></p><br>
+
+
+      <h2>Your Cart:</h2>
+      <h4>Add Your Items Here:</h4>
+
+      <form ng-submit="todoAdd()">
+          <input type="text" ng-model="todoInput" size="50" placeholder="Add New">
+          <input type="submit" value="Add New">
+      </form>
+
+      <br>
+
+      <div ng-repeat="x in todoList">
+          <input type="checkbox" ng-model="x.done"> <span ng-bind="x.todoText"></span>
+      </div>
+
+      <p><button ng-click="remove()">Remove marked</button></p>
+
+    <button class="login-button"><a href="thankyou.html" target="_blank">Order</a></button></div>
+    
+</body></div>
+</html>
